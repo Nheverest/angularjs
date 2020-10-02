@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="myapp">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>AngularJS Sample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script>
+    var app = angular.module('myapp', []);
+    app.controller('HelloWorldController', function($scope, $http){
+        $scope.variable = "AngularJS Property Read Test";
+        $scope.IpValue = "n.a.";
+
+        $http.get('rest/server').then(function (response) {
+         $scope.IpValue = response.data.ip;
+            console.log('Server response is ', response.data);
+          });
+    });
+</script>
+</head>
+<body data-ng-controller="HelloWorldController">
+<div>
+    <h2>{{variable}}</h2>
+    <p>IP value: {{IpValue}}</p>
+</div>
+</body>
+</html>
