@@ -18,3 +18,7 @@ Then
 or (one way to override embedded ip value):
 
     java -Dseedstack.config.server.ip=192.168.0.1 -jar target/angularjs-capsule.jar
+or (with external config file)
+
+    java -Dcapsule.classpath=/c/dev/workpaces/angularjs/external-config/ -jar target/angularjs-capsule.jar
+
