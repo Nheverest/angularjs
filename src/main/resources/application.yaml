@@ -25,7 +25,10 @@ security:
          pattern: /rest/hello
          filters: authcBasic
 
+web:
+  cors:
+    enabled: true
 rest:
   path: /rest
 server:
-  ip: 192.193.194.195
+  ip: localhost
